@@ -1,0 +1,90 @@
+:root {
+    --card_width: 250px;
+    --row_increment: 10px;
+    --card_border_radius: 16px;
+    --card_small: 26;
+    --card_med: 33;
+    --card_large: 45;
+}
+
+body{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
+}
+
+header{ 
+    background-color: lightblue;
+    height: 75px;
+}
+
+main{
+    /* background-color: lightskyblue; */
+    height: 3000px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.introduction{
+    /* background-color: lightgoldenrodyellow; */
+    height: 100px;
+
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.current-year-container{
+    /* background-color: lightcoral; */
+}
+
+
+.year-container{
+    margin-top: 250px;
+}
+
+.year-divider{
+    /* background-color: lightcoral; */
+    height: 57px;
+    font-size: 50px;
+    border-bottom-width: 4px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    
+}
+
+
+.tile-container{    
+    /* background-color: yellow; */
+    margin-top: 25px;
+    height: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+    
+}
+
+
+.card {
+    
+    padding: 0;
+    margin: 15px 10px;
+    background-color: #ffffff;
+    border-radius: var(--card_border_radius);
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.15);
+    
+}
+
+
+.card-small{
+   grid-row-end: span var(--card_small);
+}
+
+.card-medium{
+    grid-row-end: span var(--card_med);
+}
+.card-large{
+    grid-row-end: span var(--card_large);
+}
