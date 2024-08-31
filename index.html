@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victor's Website</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <header>HEADER</header>
+<body> 
+    <header id="section_top">
+        <img class = "icon" style ="height: 42px; margin-right: 15px;" src = "/images/gmail.png"></img>
+        <img class = "icon" style = "height: 32px; margin-right: 25px;"src="/images/github-mark.svg"></img>
+        <!-- <img class = "icon" src = "/images/Linkedin_Logo.png" ></img> -->
+    </header>
     <main> 
-        <div class = "introduction">Hi, I am Victor and I am learning to become an app developer</div>
+        <div class = "first-page">
+            <p class = "introduction introduction-1" style="margin-top: 50px;"></p>
+            <p class = "introduction introduction-name typewritter-effect"></p>
+            <canvas id="c" style="margin-top: 130px"></canvas>
+        </div>
         <div class = "current-year-container">
-            <div class = "year-divider">2024</div>
+            <p class = "year-number">2024 </p>
+            <div class = "year-divider"></div>
             <div class = "tile-container">
                 <div class="card card-small"></div>
                 <div class="card card-large"></div>
@@ -41,8 +55,10 @@
                 
             </div>
         </div>
+        
         <div class = "year-container">
-            <div class = "year-divider">2025</div>
+            <p class = "year-number">2025</p>
+            <div class = "year-divider"></div>
             <div class = "tile-container">
                 <div class="card card-large"></div>
                 <div class="card card-small"></div>
@@ -67,6 +83,20 @@
                 
             </div>
         </div>
+
+        <div class = "year-container">
+            <p class = "year-number">2026</p>
+            <div class = "year-divider"></div>
+            <div class = "tile-container">
+                <div class="card card-small"></div>
+                <div class="card card-large"></div>
+                <div class="card card-medium"></div>
+            </div>
+        </div>
+
+        <div style="height: 100vh"></div>
+        <p><a href="#section_top">back to top</a></p>
+        
     </main>
     <nav></nav>
     
