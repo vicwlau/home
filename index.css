@@ -57,9 +57,14 @@ main{
 }
 
 .first-page{
-    height: 90vh;
+    height: 120px;
 }
 
+.dotted-bg{
+    width: 100%;
+    height: 600px;
+    margin-bottom: 100px;
+}
 
 .year-number{
     font-size: 60px;
