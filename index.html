@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="sudoku/style.css">
 </head>
 <body> 
     <header id="section_top">
@@ -20,46 +21,49 @@
     <main> 
         <div class = "first-page">
             <p class = "introduction introduction-1" style="margin-top: 50px;"></p>
-            <p class = "introduction introduction-name typewritter-effect"></p>
-            <canvas id="c" style="margin-top: 130px"></canvas>
+            <p class = "introduction introduction-name typewritter-effect" ></p>
         </div>
 
-        <div class = "dotted-bg"></div>
         
         <div class = "current-year-container">
-            <p class = "year-number">2024 </p>
+            <p class = "year-number">2024</p>
             <div class = "year-divider"></div>
-            <div class = "tile-container">
-                <div class="card card-small"></div>
-                <div class="card card-large"></div>
-                <div class="card card-medium"></div>
-                <div class="card card-medium"></div>
-                <div class="card card-large"></div>
-                <div class="card card-small"></div>
-                <div class="card card-large"></div>
-                <div class="card card-small"></div>
-                <div class="card card-medium"></div>
-                <div class="card card-large"></div>
-                <div class="card card-medium"></div>
-            </div>
+            <p class = "introduction" style="margin-top: 30px;">solving soduko puzzle using wave function collapse algorithm</p>
+            <div class = "section-sudoku section-area" ></div>
+            <p class = "introduction" style="margin-top: 30px;">wordzi! a word puzzle game where you guess the hidden letters to form valid words</p>
+            <div class = "section-area" ></div>
         </div>
         
         <div class = "year-container">
-            <p class = "year-number">2025</p>
+            <p class = "year-number">future ideas...</p>
             <div class = "year-divider"></div>
             <div class = "tile-container">
-                <div class="card card-large"></div>
-                <div class="card card-small"></div>
-                <div class="card card-large"></div>
-                <div class="card card-small"></div>
-                <div class="card card-large"></div>
-                <div class="card card-small"></div>
+                <div class="card card-large">procedural road generation</div>
+                <div class="card card-small">chess engine with interesting rules</div>
+                <div class="card card-medium">fluid dynamics with particle system</div>
+                <div class="card card-small">smart meal planning tool</div>
+                <div class="card card-empty card-large"></div>
+                <div class="card card-empty card-medium"></div>
+                <div class="card card-empty card-small"></div>
+                <div class="card card-empty card-large"></div>
+                <div class="card card-empty card-medium"></div>
+                <div class="card card-empty card-medium"></div>
+                <div class="card card-empty card-small"></div>
+                <div class="card card-empty card-large"></div>
+                <div class="card card-empty card-medium"></div>
+                <div class="card card-empty card-small"></div>
+                <div class="card card-empty card-small"></div>
+                <div class="card card-empty card-large"></div>
+                <div class="card card-empty card-medium"></div>
+                <div class="card card-empty card-small"></div>
+                <div class="card card-empty card-large"></div>
+                <div class="card card-empty card-medium"></div>
 
                 
             </div>
         </div>
 
-        <div class = "year-container">
+        <!-- <div class = "year-container">
             <p class = "year-number">2026</p>
             <div class = "year-divider"></div>
             <div class = "tile-container">
@@ -67,9 +71,9 @@
                 <div class="card card-large"></div>
                 <div class="card card-medium"></div>
             </div>
-        </div>
+        </div> -->
 
-        <div style="height: 100vh"></div>
+        <!-- <div style="height: 30vh"></div> -->
         <p><a href="#section_top">back to top</a></p>
         
     </main>
@@ -100,14 +104,15 @@
 
             two.update();
 
-            const container = document.querySelector(".dotted-bg");
-            container.style.width = "100%";
-            container.style.height = "600px";
+            const container = document.querySelector("header");
+            // container.style.width = "100%";
+            // container.style.height = "600px";
             container.style.backgroundImage = `url(${two.renderer.domElement.toDataURL()})`;
             container.style.backgroundRepeat = 'repeat';
             container.style.backgroundSize = `${dimensions}px`;
         }
     </script>
+    <script type='module' src="sudoku/app.js"></script>
 
 
     
