@@ -49,10 +49,7 @@ header{
 
 
 main{
-    /* background-color: lightskyblue; */
-    
     height: 1300px;
- 
 }
 
 .introduction{
@@ -75,11 +72,6 @@ main{
     align-items: center;
 }
 
-.dotted-bg{
-    width: 100%;
-    height: 600px;
-    margin-bottom: 100px;
-}
 
 .year-container, .current-year-container{
     margin-top: 50px;

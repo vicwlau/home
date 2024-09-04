@@ -11,6 +11,7 @@
     
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="sudoku/style.css">
+
 </head>
 <body> 
     <header id="section_top">
@@ -68,56 +69,14 @@
             </div>
         </div>
 
-        <!-- <div class = "year-container">
-            <p class = "year-number">2026</p>
-            <div class = "year-divider"></div>
-            <div class = "tile-container">
-                <div class="card card-small"></div>
-                <div class="card card-large"></div>
-                <div class="card card-medium"></div>
-            </div>
-        </div> -->
-
-        <!-- <div style="height: 30vh"></div> -->
         <p><a href="#section_top">back to top</a></p>
         
     </main>
     <nav></nav>
     <script src ="intro.js"></script>
     <script src="two.js"></script>
-    <script>
-        
-        addBackdrop(25);
-
-        function addBackdrop(d) {
-            
-            const dimensions = d || 50;
-            const two = new Two({
-            type: Two.Types.canvas,
-            width: dimensions,
-            height: dimensions
-            });
-
-            const r = dimensions / 5;
-            const center = dimensions / 2;
-
-            const a = two.makeLine(center - r, center, center + r, center);
-            const b = two.makeLine(center, center - r, center, center + r);
-
-            a.stroke = b.stroke = '#aaa';
-            a.linewidth = b.linewidth = 0.25;
-
-            two.update();
-
-            const container = document.querySelector("header");
-            // container.style.width = "100%";
-            // container.style.height = "600px";
-            container.style.backgroundImage = `url(${two.renderer.domElement.toDataURL()})`;
-            container.style.backgroundRepeat = 'repeat';
-            container.style.backgroundSize = `${dimensions}px`;
-        }
-    </script>
-    <script type='module' src="sudoku/app.js"></script>
+    <script src ="header_bg.js"></script>
+    <script type='module'src="sudoku/app.js"></script>
 
 
     
