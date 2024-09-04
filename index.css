@@ -27,7 +27,10 @@
 body{
     background-image: linear-gradient(to top, #fdfdfd 0%, #ffffff 100%);
     max-width: 1800px;
-    min-width: 485;
+    
+    /* minimum width of 485px */
+    min-width: 1285px; 
+
     margin-left: 75px;
     margin-right: 75px;
 }
