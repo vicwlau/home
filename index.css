@@ -108,11 +108,11 @@ main{
 
 .card {
     
-    padding: 0;
+    
     margin: 15px 10px;
-    background-color: #ffffff;
-    border-radius: var(--card_border_radius);
-    box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2);
+    /* background-color: #ffffff; */
+    /* border-radius: var(--card_border_radius); */
+    /* box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.2); */
 
     text-align: center;
     display: flex;
@@ -125,7 +125,7 @@ main{
 }
 
 .card-empty{
-    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.1);
+    /* box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.1); */
     
 }
 
