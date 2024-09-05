@@ -73,6 +73,7 @@ main{
 /* re-useable for each section */
 .section-description{
     margin-top: 30px;
+    display: inline-block;
 }
 
 .section-component{
@@ -90,6 +91,8 @@ main{
 
 
 .section-container{
+    display: flex;
+    flex-direction: column;
     /* margin-top: 50px; */
 }
 

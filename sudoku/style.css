@@ -34,7 +34,7 @@
 .main-container{
     /* border: red 3px solid; */
     display: flex;
-    
+    /* flex-wrap: wrap; */
     justify-content: center;
 
 }   
@@ -129,9 +129,21 @@
 .possible-value-removed{
     opacity: 0.25;
 }
+.section-sudoku{
+    width: 100%;
+    height: 70vh;
 
-@media (max-width: 480px) {
+    /* border: orange 3px solid; */
+}
+
+@media (width < 480px) {
     .reset-button{
         font-size: 4vw;
+    }
+}
+
+@media (width > 480px) and (width < 1000px) {
+    .section-sudoku{
+        height: 70vh;
     }
 }

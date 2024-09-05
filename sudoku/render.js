@@ -138,6 +138,7 @@ export function updateGridSize(){
     const width = document.querySelector(ref_MainHTMLSection).offsetWidth;
     const height = document.querySelector(ref_MainHTMLSection).offsetHeight;
     let length = Math.min(width, height);
+    length = length;
     
     if (height > width) {
         
@@ -146,6 +147,10 @@ export function updateGridSize(){
 
         document.querySelector('.'+ref_MainContainer).style.flexDirection = "column";
         document.querySelector('.'+ref_MainContainer).style.alignItems = "center";
+
+        // document.querySelector(".section-sudoku").backgroundColor = "red";
+        console.log("height > width");
+        // console.log(document.querySelector('.'+ref_MainContainer).style.backgroundColor);
     }
     else{
 
@@ -154,6 +159,11 @@ export function updateGridSize(){
         
         document.querySelector('.'+ref_MainContainer).style.flexDirection = "row";
         document.querySelector('.'+ref_MainContainer).style.justifyContent = "center";
+
+        // document.querySelector('.section-sudoku').style.backgroundColor = "yellow";
+        // document.querySelector('.'+ref_MainContainer).style.backgroundColor = "pink";
+        console.log("height < width");
+        
     }
 
     const grid1 = document.querySelector("#grid1");
@@ -164,7 +174,7 @@ export function updateGridSize(){
     grid2.style.width = `${length}px`;
     grid2.style.height = `${length}px`;
     
-    let tileSize = length / 9 ;
+    let tileSize = length / 9;
     tileSize = Math.floor(tileSize) -5;
     
     tileElements.forEach((e) => {
