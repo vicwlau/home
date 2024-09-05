@@ -11,10 +11,13 @@
     --typewritter_color: rgb(0, 0, 0);
     --font_color: rgb(0, 0, 0);
 
-    --fontsize_header: 2rem;
-    --fontsize_body: 2rem;
-    --fontsize_section_header: 4rem;
+    --fontsize_header: clamp(1vw,2.5vw,2rem);
+    --fontsize_body: clamp(1vw,2vw,2rem);
+    --fontsize_section_header: clamp(1vw,4.5vw,4rem);
 }   
+    /* --fontsize_header: 2rem;
+    --fontsize_body: 2rem;
+    --fontsize_section_header: 4rem; */
 
 *{
     padding: 0px 0px 0px 0px;
@@ -43,12 +46,14 @@ body{
 
 
 header{ 
-    margin-top: 2rem;
-    height: 120px;
+    margin-top: 2vw;
+    height: clamp(1vh,15vh,150px);
     font-size: var(--fontsize_header);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    /* outline: red solid 1px; */
 }
 
 main{
@@ -72,10 +77,8 @@ main{
 
 .section-component{
     width: 100%;
-    
-    
-    margin-top: 45px;
-    margin-bottom: 150px;
+    margin-top: 60px;
+    margin-bottom: 90px;
 
     /* outline: red solid 1px; */
 
@@ -106,11 +109,9 @@ main{
 }
 
 
-
-
 .tile-container{    
     /* background-color: yellow; */
-    margin-top: 25px;
+    /* margin-top: 25px; */
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
@@ -120,7 +121,6 @@ main{
 }
 
 .card {
-    
     
     margin: 15px 10px;
     /* background-color: #ffffff; */
@@ -134,11 +134,6 @@ main{
     animation: card-appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
-    
-}
-
-.card-empty{
-    /* box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.1); */
     
 }
 
@@ -225,13 +220,23 @@ main{
         margin-left: 5px;
         margin-right: 5px;
         width:100%;
+
+        --fontsize_header: clamp(1vw,2vh,2rem);
+        --fontsize_body: clamp(1vw,1.75vh,2rem);
+        --fontsize_section_header: clamp(1vw,3vh,4rem);
     }
 
     .section-component{
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 60px;
     }
 
     .contact{
         display: none;
     }
+    header{
+        height: 70px;
+    }
+
 }

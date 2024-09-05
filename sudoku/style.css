@@ -1,33 +1,28 @@
 *{
-    --ratio: .75;
     
-    --possible-value-font-size: calc(0.5rem*var(--ratio));   
 
-    
     --selection-color-bg: rgba(0, 247, 255, 0.954);
     --tile-bg-start: white;
     --tile-bg-influence: rgba(255, 157, 0, 0.52);
     --tile-bg-invalid: rgba(255, 0, 0, 0.52);
     --tile-bg-success: rgba(0, 255, 0, 0.52);
 
-    --font-size-potential-value: calc(1rem*var(--ratio));
-
-    --resetbutton-width: calc(350px*var(--ratio));
-    --resetbutton-height: calc(6rem*var(--ratio));
     
+
 }
 
 .reset-button{
-    width: 10%;
+    width: clamp(75px, 8vw, 200px);
+    border-radius: 20px;
+    margin-bottom: 10px;
     
     font-size: 2vw;
     text-align: center;
 
     background-color: var(--tile-bg-invalid);
     color: white;
-    border: 1px solid;
-    border-radius: calc(var(--ratio)*var(--resetbutton-width) * 0.15);
-
+    border: none;
+    
     transition: 0.25s ease-in-out;
 }
 
@@ -136,12 +131,6 @@
 }
 
 @media (max-width: 480px) {
-    .main-container{
-        flex-direction: column;
-        align-items: center;
-    }
-
-
     .reset-button{
         font-size: 4vw;
     }

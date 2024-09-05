@@ -12,6 +12,7 @@ const ref_PossibleValueTile = 'possible-value-tile';
 const ref_ResetButton = 'reset-button';
 const cs_DIV = 'div';
 const cs_BUTTON = 'button';
+
 //initialize 2D matrix for mainView
 const mainView = Array(GRID_ROW).fill(null).map(() => Array(GRID_COL).fill(null));
 const possibleValuesView = Array(GRID_ROW).fill(null).map(() => Array(GRID_COL).fill(null));

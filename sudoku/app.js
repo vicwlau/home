@@ -10,6 +10,7 @@ const button = document.querySelector('button');
 //initialize grid
 let gridInstance = new grid();
 const renderGrid = initializeView(gridInstance);
+updateGridSize();
 
 window.addEventListener("resize", () => {
     updateGridSize();
@@ -20,6 +21,7 @@ export const runProgram = () => {
     if (programID !== null) {
         clearInterval(programID);
         gridInstance = new grid();
+        updateGridSize();
     }
     console.log('run');
     setValueToNodeAndUpdateView(gridInstance.getRandomNode(), gridInstance.generateRandomNumber());
