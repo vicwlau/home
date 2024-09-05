@@ -35,21 +35,10 @@ body{
     /* min-width: 485px; */
     max-width: 1600px;
     
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 40px;
+    margin-right: 4px;
 
     font-size: var(--fontsize_body);
-}
-
-@media (max-width: 480px) {
-    body{
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .section-area{
-        flex-direction: row;
-    }
 }
 
 
@@ -66,7 +55,7 @@ main{
     height: 1300px;
 }
 
-.name{
+.journal-name{
     flex-shrink: 0;
     margin-right: 50px;
 }
@@ -88,7 +77,7 @@ main{
     margin-top: 45px;
     margin-bottom: 150px;
 
-    outline: red solid 1px;
+    /* outline: red solid 1px; */
 
     display: flex;
     flex-direction: column;
@@ -115,6 +104,8 @@ main{
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }
+
+
 
 
 .tile-container{    
@@ -227,4 +218,20 @@ main{
     animation: 
         typewriter var(--typewritter_speed) steps(13) forwards, 
         blink 1s steps(14) infinite; 
+}
+
+@media (max-width: 480px) {
+    body{
+        margin-left: 5px;
+        margin-right: 5px;
+        width:100%;
+    }
+
+    .section-component{
+        flex-direction: column;
+    }
+
+    .contact{
+        display: none;
+    }
 }

@@ -20,6 +20,7 @@ export function initializeView(inputGrid) {
     const rows = inputGrid.rows;
     const columns = inputGrid.columns;
     let mainContainer = document.querySelector(`.${ref_MainContainer}`);
+    
     //create reset button before main container
     const resetButton = document.createElement(cs_BUTTON);
     resetButton.classList.add(ref_ResetButton);
@@ -28,6 +29,7 @@ export function initializeView(inputGrid) {
         runProgram();
     });
     (_a = document.querySelector(ref_MainHTMLSection)) === null || _a === void 0 ? void 0 : _a.appendChild(resetButton);
+    
     if (mainContainer) { }
     else {
         mainContainer = document.createElement(cs_DIV);
