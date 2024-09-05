@@ -15,47 +15,45 @@
 </head>
 <body> 
     <header id="section_top">
-        <a href="mailto:victorlaugamedev@gmail.com">
-            <img class = "icon" style ="height: 65px; margin-right: 25px;" src = "images/gmail.png"></img>
-        </a>    
-        
-        <a href = "https://github.com/vicwlau" target = "_blank">
-            <img class = "icon" style = "height: 44px; margin-right: 25px;"src="images/github-mark.svg"></img>
-        </a>
-        <!-- <img class = "icon" src = "/images/Linkedin_Logo.png" ></img> -->
+        <div class="name">
+            <p>development journal</p>
+            <p class="typewritter-effect" >by: victor lau</p>
+        </div>
+        <div class = "contact">
+            <a style="margin-right: 15px;" href="mailto:victorlaugamedev@gmail.com">email
+                <!-- <img class = "icon" style ="height: 65px; margin-right: 25px;" src = "images/gmail.png"></img> -->
+            </a>    
+            <a href = "https://github.com/vicwlau" target = "_blank">github
+                <!-- <img class = "icon" style = "height: 44px; margin-right: 25px;"src="images/github-mark.svg"></img> -->
+            </a>
+        </div>
     </header>
     <main> 
-        <div class = "first-page">
-            <p class = "introduction introduction-1" style="margin-top: 50px;"></p>
-            <p class = "introduction introduction-name typewritter-effect" ></p>
-        </div>
-
-        
-        <div class = "current-year-container">
+        <div style="margin-top: 100px;"> </div>
+        <div class = "section-container">
             <p class = "year-number">2024</p>
-            <div class = "year-divider"></div>
+            <div class = "line-divider"></div>
             
-            <p class = "introduction" style="margin-top:30px;">solving soduko puzzle using wave function collapse algorithm</p>
+            <p class="section-description">solving soduko puzzle using wave function collapse algorithm</p>
+            <div class = "section-sudoku section-component"></div>
             
-            <div class = "section-sudoku section-area" ></div>
-            <p class="introduction" style="margin-top:30px;"><strong style="font-weight: 400;">wordzi!</strong> a word puzzle game where you guess the hidden letters to form valid words</p>
+            <p class="section-description"><strong style="font-weight: 400;">wordzi!</strong> a word puzzle game where you guess the hidden letters to form valid words</p>
             
-            <div class = "section-area" >
+            <div class = "section-component" >
                     <a href = "https://apps.apple.com/us/app/wordzi/id6480348619" 
                         target = "_blank"
-                        style="margin-bottom: 30px;">
-
+                        >
                         <img src = "images/appstore_download.svg" style="height: 60px;"></img>
                     </a>
-                    <img src = "images/wordzi.png"></img>
+                    <img  src = "images/wordzi.png" style="margin-top: 30px; outline: red solid 1px; width:100%;"></img>
             </div>
         </div>
 
-        <div class = "year-container">
+        <div class = "section-container">
             <p class = "year-number">future ideas...</p>
-            <div class = "year-divider"></div>
+            <div class = "line-divider"></div>
             <div class = "tile-container">
-                <div class="card card-large">procedural road generation</div>
+                <div class="card card-large">procedural generation for city and roads</div>
                 <div class="card card-small">chess engine with interesting rules</div>
                 <div class="card card-medium">fluid dynamics with particle system</div>
                 <div class="card card-small">smart meal planning tool</div>
@@ -65,18 +63,14 @@
                 <div class="card card-empty card-large"></div>
                 <div class="card card-empty card-medium"></div>
                 <div class="card card-empty card-medium"></div>
-                <div class="card card-empty card-small"></div>
-
-
-
-                
+                <div class="card card-empty card-small"></div>                
             </div>
         </div>
         <p><a href="#section_top" style="height:10px">back to top</a></p>
         
     </main>
     <nav></nav>
-    <script src ="intro.js"></script>
+    
     <script src="two.js"></script>
     <script src ="header_bg.js"></script>
     <script type='module'src="sudoku/app.js"></script>

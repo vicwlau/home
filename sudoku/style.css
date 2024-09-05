@@ -1,11 +1,11 @@
 *{
-    --ratio: 0.75;
+    --ratio: .75;
     
     --possible-value-font-size: calc(0.5rem*var(--ratio));   
     --gridItem-size: calc(75px*var(--ratio));
     --row-gap: calc(10px *var(--ratio));
     --columns: 9;
-    --gap-between-grids: 50px;
+    --gap-between-grids: calc(50px * var(--ratio));
     
     --height: calc(--var(--gridItem-size)*var(--columns) + var(--row-gap)*calc(var(--columns)-1) + 2*var(--gap-between-grids));
     
@@ -17,12 +17,15 @@
     --tile-bg-success: rgba(0, 255, 0, 0.52);
 
     --font-size-potential-value: calc(1rem*var(--ratio));
+
+    --resetbutton-width: calc(350px*var(--ratio));
+    --resetbutton-height: calc(6rem*var(--ratio));
     
 }
 
 .reset-button{
-    width: 150px;
-    height: 100px;
+    width: var(--resetbutton-height);
+    height: var(--resetbutton-height);
 
     font-size: calc(2.5rem*var(--ratio));
     text-align: center;
@@ -30,7 +33,7 @@
     background-color: var(--tile-bg-invalid);
     color: white;
     border: 1px solid;
-    border-radius: calc(var(--ratio)*130px * 0.5);
+    border-radius: calc(var(--ratio)*var(--resetbutton-width) * 0.15);
 
     margin-bottom: 2rem;
 
@@ -49,7 +52,21 @@
     height: var(--height);
 
     font-size: calc(1.5rem*var(--ratio));
+    /* width: 100%; */
 }   
+
+@media (max-width: 480px) {
+    .main-container{
+        flex-direction: column;
+        --ratio: 0.15;
+    }
+
+    .grid{
+        margin-left: 0;
+        margin-bottom: var(--gap-between-grids);
+    }
+}
+
 
 .grid{
     margin-left: var(--gap-between-grids);

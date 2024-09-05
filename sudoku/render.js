@@ -21,7 +21,7 @@ export function initializeView(inputGrid) {
     const columns = inputGrid.columns;
     let mainContainer = document.querySelector(`.${ref_MainContainer}`);
     //create reset button before main container
-    const resetButton = document.createElement('button');
+    const resetButton = document.createElement(cs_BUTTON);
     resetButton.classList.add(ref_ResetButton);
     resetButton.textContent = "run";
     resetButton.addEventListener('click', () => {
