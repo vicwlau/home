@@ -2,10 +2,7 @@
     --ratio: .75;
     
     --possible-value-font-size: calc(0.5rem*var(--ratio));   
-    --gridItem-size: 8%;
-    --row-gap: 3px;
-    --columns: 9;
-    --gap-between-grids: 5px;
+
     
     --selection-color-bg: rgba(0, 247, 255, 0.954);
     --tile-bg-start: white;
@@ -40,43 +37,35 @@
 }
 
 .main-container{
+    /* border: red 3px solid; */
     display: flex;
-    flex-direction: row;
-    align-items: center;
     
-    height: 50vw;
-    width: 100%;
+    justify-content: center;
 
-    font-size: calc(1.5rem*var(--ratio));
 }   
-
-
 
 .grid{
 
-    margin-right: 2%;
+    /* border: blue 2px solid; */
 
-    width: 50%;
-    height: 85%;
+    margin: clamp(1px, 1vw, 10px);
+
     display: grid;
-    
     grid-template-columns: repeat(9,1fr);
-
-    row-gap: 3px;
-    column-gap: 3px;
+    grid-template-rows: repeat(9,1fr);
+    
+    grid-gap: 1px;
+   
 
 }
 
 .grid-item{
-    border: 1px solid;
+    border: black 1px solid;
+    font-size: clamp(0.5vw, 2vw, 50px);
     
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    border-radius: 5px;
-    background-color: 3vw;
-    font-weight: bold;
+    justify-content: center;
     transition: scale .5s;
 }
 
@@ -95,7 +84,7 @@
     }
     to{
         background-color: var(--tile-bg-success);
-        scale: 1.1;
+        scale: 1.03;
     }
 }
 
@@ -120,25 +109,26 @@
     scale: 1.25;
 }
 
+.container{
+    /* border: cyan 3px solid; */
+}
+
 /* Possible Value Grid */
 .possible-value-container{
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: 1px solid;
-    
-    justify-content: center;
-    align-items: center;
-    
-    border-radius: 5px;
-    
-    font-size: var(--font-size-potential-value);
-    text-align: center;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: rgba(0,255,0,0.52);
 }
 
 .possible-value-tile{
-    text-align: center;
+    /* border: pink 1px solid; */
+    font-size: clamp(0px, 1vw, 15px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .possible-value-removed{
@@ -148,19 +138,9 @@
 @media (max-width: 480px) {
     .main-container{
         flex-direction: column;
-        height: 90vh;
-        width: 50vh;
+        align-items: center;
     }
-    .grid{
-        width: 80%;
-        height: 50%;
 
-        margin-right: 0px;
-        margin-top: 30px;
-    }
-    .possible-value-container{
-        font-size: 2vw;
-    }
 
     .reset-button{
         font-size: 4vw;

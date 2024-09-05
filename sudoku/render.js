@@ -6,6 +6,7 @@ const ref_MainContainer = 'main-container';
 const ref_Grid = 'grid';
 const ref_GridItem = 'grid-item';
 const ref_GridItemInvalid = 'grid-item-invalid';
+const ref_Container = 'container';
 const ref_PossibleValueContainer = 'possible-value-container';
 const ref_PossibleValueTile = 'possible-value-tile';
 const ref_ResetButton = 'reset-button';
@@ -14,48 +15,53 @@ const cs_BUTTON = 'button';
 //initialize 2D matrix for mainView
 const mainView = Array(GRID_ROW).fill(null).map(() => Array(GRID_COL).fill(null));
 const possibleValuesView = Array(GRID_ROW).fill(null).map(() => Array(GRID_COL).fill(null));
+const tileElements = [];
+
 export function initializeView(inputGrid) {
-    var _a, _b;
+    let _b;
+    
     //create main container
     const rows = inputGrid.rows;
     const columns = inputGrid.columns;
     let mainContainer = document.querySelector(`.${ref_MainContainer}`);
     
-    //create reset button before main container
-    const resetButton = document.createElement(cs_BUTTON);
-    resetButton.classList.add(ref_ResetButton);
-    resetButton.textContent = "run";
-    resetButton.addEventListener('click', () => {
-        runProgram();
-    });
-    (_a = document.querySelector(ref_MainHTMLSection)) === null || _a === void 0 ? void 0 : _a.appendChild(resetButton);
-    
+    createRunButton(mainContainer);
+
     if (mainContainer) { }
     else {
         mainContainer = document.createElement(cs_DIV);
         mainContainer.classList.add(ref_MainContainer);
         (_b = document.querySelector(ref_MainHTMLSection)) === null || _b === void 0 ? void 0 : _b.appendChild(mainContainer);
     }
+
     //create grid layout
     const grid = document.createElement(cs_DIV);
     grid.classList.add(ref_Grid);
+    //add id to element
+    grid.id = "grid1";
     mainContainer.appendChild(grid);
+    
     //create possible values layout
     const gridPossibleValues = document.createElement(cs_DIV);
     gridPossibleValues.classList.add(ref_Grid);
+    gridPossibleValues.id = "grid2";
     mainContainer.appendChild(gridPossibleValues);
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns; j++) {
             const gridItem = document.createElement(cs_DIV);
-            gridItem.classList.add(ref_GridItem);
-            //add id to element
+            gridItem.classList.add(ref_GridItem, ref_Container);
+            
+            tileElements.push(gridItem);
             gridItem.id = `${ref_GridItem}-${i}-${j}`;
             grid.appendChild(gridItem);
             mainView[i][j] = gridItem;
+            
             const possibleValues = inputGrid.grid[i][j].possibleValues;
             const possibleValueContainerElement = document.createElement(cs_DIV);
-            possibleValueContainerElement.classList.add(ref_PossibleValueContainer);
+            possibleValueContainerElement.classList.add(ref_PossibleValueContainer, ref_Container);
             gridPossibleValues.appendChild(possibleValueContainerElement);
+            tileElements.push(possibleValueContainerElement);
+
             possibleValues.forEach((value) => {
                 const possibleValuesElement = document.createElement(cs_DIV);
                 possibleValuesElement.classList.add(ref_PossibleValueTile);
@@ -114,4 +120,58 @@ export function updateView(inputGrid) {
         mainView.forEach((row) => row.forEach((element) => element.classList.remove('grid-item-success')));
     }
 }
+
+function createRunButton(){
+    let _a;
+    //create reset button before main container
+    const resetButton = document.createElement(cs_BUTTON);
+    resetButton.classList.add(ref_ResetButton);
+    resetButton.textContent = "run";
+    resetButton.addEventListener('click', () => {
+        runProgram();
+    });
+    (_a = document.querySelector(ref_MainHTMLSection)) === null || _a === void 0 ? void 0 : _a.appendChild(resetButton);
+}
+
+export function updateGridSize(){
+    const width = document.querySelector(ref_MainHTMLSection).offsetWidth;
+    const height = document.querySelector(ref_MainHTMLSection).offsetHeight;
+    let length = Math.min(width, height);
+    
+    if (height > width) {
+        
+        if(length *2 > height)
+            length = height / 2;
+
+        document.querySelector('.'+ref_MainContainer).style.flexDirection = "column";
+        document.querySelector('.'+ref_MainContainer).style.alignItems = "center";
+    }
+    else{
+
+        if(length * 2 > width)
+            length = width / 2;
+        
+        document.querySelector('.'+ref_MainContainer).style.flexDirection = "row";
+        document.querySelector('.'+ref_MainContainer).style.justifyContent = "center";
+    }
+
+    const grid1 = document.querySelector("#grid1");
+    grid1.style.width = `${length}px`;
+    grid1.style.height = `${length}px`;
+
+    const grid2 = document.querySelector("#grid2");
+    grid2.style.width = `${length}px`;
+    grid2.style.height = `${length}px`;
+    
+    let tileSize = length / 9 ;
+    tileSize = Math.floor(tileSize) -5;
+    
+    tileElements.forEach((e) => {
+        e.style.height = `${tileSize}px`;
+        e.style.width = `${tileSize}px`;
+    });
+
+}
+
+
 //# sourceMappingURL=render.js.map

@@ -1,4 +1,4 @@
-import { updateView, initializeView } from './render.js';
+import { updateView, initializeView, updateGridSize } from './render.js';
 import { grid } from './grid.js';
 import { collaspeGrid, findLowestScoreNode, getOneRandomPossibleValueFromNode } from './waveFunctionCollaspe.js';
 const ref_gridItem = 'grid-item';
@@ -10,6 +10,11 @@ const button = document.querySelector('button');
 //initialize grid
 let gridInstance = new grid();
 const renderGrid = initializeView(gridInstance);
+
+window.addEventListener("resize", () => {
+    updateGridSize();
+});
+
 let programID;
 export const runProgram = () => {
     if (programID !== null) {
